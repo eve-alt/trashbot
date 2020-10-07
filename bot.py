@@ -11,6 +11,11 @@ def get_pre(bot, message):
 	try:
 		return commands.when_mentioned_or([f'{prefix[str(message.guild.id)]} ',f'{prefix[str(message.guild.id)]}'])(bot, message)
 	except KeyError:
+		prefix[f'{guild.id}'] = 'zz'
+		
+		with open('prefs.json', 'w') as f:
+			json.dump(prefix, f, indent=4)
+
 		return commands.when_mentioned_or(['zz ', 'zz'])(bot, message)
 
 log = logging.getLogger(__name__)
