@@ -370,7 +370,7 @@ class Economy(commands.Cog):
 		return u
 
 	async def get_user_titles(self, uid):
-		u = self.achieved.find_one(
+		u = self.achieved.find(
 			{
 				'uid':uid
 			}
