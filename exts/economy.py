@@ -1584,7 +1584,7 @@ class Economy(commands.Cog):
 		if user.id == ctx.author.id:
 			raise SelfRep('u can\'t rep urself dumbo.')
 
-		existinguser2 = await self.get_currency_info(ctx.author.id)
+		existinguser2 = await self.get_currency_info(user.id)
 
 		if existinguser2:
 			try:
