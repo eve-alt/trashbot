@@ -40,6 +40,7 @@ class TrashBot(commands.AutoShardedBot):
 		exts = [
 			'exts.economy',
 			'exts.dblcog',
+			'exts.help',
 			'jishaku'
 		]
 
