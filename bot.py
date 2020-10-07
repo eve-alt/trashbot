@@ -8,15 +8,19 @@ from pymongo import MongoClient as mc
 
 def get_pre(bot, message):
 	prefix = read_file('prefs.json')
+
 	try:
-		return commands.when_mentioned_or([f'{prefix[str(message.guild.id)]} ',f'{prefix[str(message.guild.id)]}'])(bot, message)
-	except KeyError:
-		prefix[f'{guild.id}'] = 'zz'
+		pfxs = [f'{prefix[str(message.guild.id)]} ',f'{prefix[str(message.guild.id)]}']
 		
+	except KeyError:
+		pfxs = ['zz ', 'zz']
+		
+		prefix[f'{guild.id}'] = 'zz'
 		with open('prefs.json', 'w') as f:
 			json.dump(prefix, f, indent=4)
 
-		return commands.when_mentioned_or(['zz ', 'zz'])(bot, message)
+	return commands.when_mentioned_or(*pfxs)(bot, message)
+
 
 log = logging.getLogger(__name__)
 
