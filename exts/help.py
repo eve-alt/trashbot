@@ -42,7 +42,7 @@ class MyHelpCommand(commands.HelpCommand):
 		e.description = f'```md\n- Arguments are the words you see next to a command.\n- Arguments with "=" are optional.\n- Arguments without "=" are required, same for arguments inside a "<>".\n\nFor command help:\n• {ctx.prefix}help <command>\n• {ctx.prefix}help <group/parent> <subcommand>\nFor category help:\n• {ctx.prefix}help <category/cog>\n```**[Support Server](https://discord.gg/zQ9KT2X) | [Invite Me](https://discord.com/oauth2/authorize?client_id=733645780925284413&permissions=201845825&scope=bot)**'
 		e.set_author(name=ctx.author, icon_url=ctx.author.avatar_url_as(static_format='png'))
 		cogs = bot.cogs
-		skip_field = ["eval", "help", 'dblcog']
+		skip_field = ["eval", "help", "dbl"]
 		for x in cogs:
 			mypp = []
 			if str(x).lower() in skip_field:
