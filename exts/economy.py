@@ -1466,8 +1466,8 @@ class Economy(commands.Cog):
 
 		fdaily = datetime.timedelta(hours=24, minutes=0) - (todaytime - lastdaily)
 		frep = datetime.timedelta(hours=24, minutes=0) - (todaytime - lastrep)
-		fbeg = 'Ready!' if begcd <= 0 else str(datetime.timedelta(seconds=begcd))
-		ftrain = 'Ready!' if traincd <= 0 else str(datetime.timedelta(seconds=traincd))
+		fbeg = 'Ready!' if begcd <= 0 else str(datetime.timedelta(seconds=int(begcd)))
+		ftrain = 'Ready!' if traincd <= 0 else str(datetime.timedelta(seconds=int(traincd)))
 
 		if fdaily.days < 0:
 			fdaily = 'Ready!'
