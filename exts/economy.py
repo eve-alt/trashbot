@@ -3557,23 +3557,6 @@ class Economy(commands.Cog):
 
 		await ctx.send(embed=e)
 
-	@commands.command(name='emoji')
-	async def _emoji(self, ctx, emoji):
-
-		def emoji_convert(emoji):
-			"""Manual Conversion of Discord Emojis"""
-			emoji = emoji.replace('<', '').replace('>', '').split(':')
-			base_url = 'https://cdn.discordapp.com/emojis/'
-
-			if emoji[0] == 'a':
-				return f'{base_url}{emoji[2]}.gif?v=1', emoji[1]
-			return f'{base_url}{emoji[2]}.png?v=1', emoji[1]
-
-		emoji_url, emoji_name = emoji_convert(emoji)
-
-		await ctx.send(f'`Name:` {emoji_name}\n`URL:` {emoji_url}')
-
-
 	@commands.Cog.listener()
 	async def on_command_error(self, ctx, error):
 		error = getattr(error, 'original', error)
